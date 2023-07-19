@@ -1,0 +1,20 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu {
+    background: $white;
+    li {
+      padding: 0 0.7rem;
+
+      a {
+        color: $purple !important;
+        padding: 0 0.7rem;
+        text-transform: capitalize !important;
+        font-weight: 1000 !important;
+      }
+
+      &:hover {
+        color: $purple;
+      }
+    }
+}
