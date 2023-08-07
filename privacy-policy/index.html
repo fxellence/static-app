@@ -14,9 +14,13 @@
 
     gtag('config', 'G-B9KBRHRLN9');
   </script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.min.js"
+  ></script>
   <title>FXellence International Payments</title>
   <body>
-    <object
+    <!--     <object
       data="FXellence_Cookie_Policy.pdf"
       type="application/pdf"
       width="100%"
@@ -26,6 +30,17 @@
         Your browser does not support PDF files.
         <a href="mFXellence_Cookie_Policy.pdf">Download the file instead</a>
       </p>
-    </object>
+    </object> -->
+    <div id="canvases"></div>
+    <script type="text/javascript" src="script.js"></script>
+    <style type="text/css">
+      body {
+        background-color: #535759;
+      }
+      #canvases canvas {
+        margin: 20px auto;
+        display: block;
+      }
+    </style>
   </body>
 </html>
