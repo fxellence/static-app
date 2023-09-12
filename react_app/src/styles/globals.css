@@ -1,0 +1,3933 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;900&family=Poppins:wght@300;500;700;800;900&display=swap');
+
+
+
+@font-face {
+  font-family: Poppins-300;
+  src: url("./Fonts/Poppins/Poppins-Light.ttf");
+
+}
+
+@font-face {
+  font-family: Poppins-400;
+  src: url("./Fonts/Poppins/Poppins-Regular.ttf");
+  src: url("./Fonts/Poppins/Poppins-Regular.otf");
+  src: url("./Fonts/Poppins/Poppins-Regular.woff");
+  src: url("./Fonts/Poppins/Poppins-Regular.woff2");
+}
+
+@font-face {
+  font-family: Poppins-500;
+  src: url("./Fonts/Poppins/Poppins-Medium.ttf");
+}
+
+
+@font-face {
+  font-family: Poppins-600;
+  src: url("./Fonts/Poppins/Poppins-SemiBold.ttf");
+
+}
+
+@font-face {
+  font-family: Poppins-700;
+  src: url("./Fonts/Poppins/Poppins-Bold.ttf");
+
+}
+@font-face {
+  font-family: Poppins-800;
+  src: url("./Fonts/Poppins/Poppins-ExtraBold.ttf");
+
+}
+
+.Error_text {
+  color: red;
+  font-size: 16px;
+  height: 20px;
+  font-family: "Poppins",sans-serif;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: Poppins, sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Animations */
+/* Slide Animations */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideBottomCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideTopCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideBottomCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideTopCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideCenter {
+  0% {
+    transform: translate(-50%, 250%);
+    opacity: 0; }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1; } }
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-200%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(200%); }
+  100% {
+    transform: translateY(0%); } }
+
+/* Fade Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Pop Animations */
+@keyframes popCenter {
+  0% {
+    transform: translate(-50%, -50%) scale(0); }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes popBottom {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popTop {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popBottomCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popTopCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popBottomCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+@keyframes popTopCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+.cookie-icon {
+  display: flex;
+  align-items: center;
+  display: none;
+  align-self: center; }
+
+dfn.enzuzo-gpc-tooltip-bar {
+  position: relative;
+  display: inherit;
+  align-items: center; }
+  dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+    display: none;
+    position: absolute;
+    right: -22px;
+    z-index: 30;
+    width: 275px;
+    height: auto;
+    padding: 4px 8px;
+    min-height: 0;
+    background: rgba(97, 97, 97, 0.9);
+    border-radius: 4px;
+    color: #FFF;
+    border: none; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      position: absolute;
+      content: "";
+      bottom: -6px;
+      right: 25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 6px 6px;
+      border-color: transparent transparent rgba(97, 97, 97, 0.9) transparent;
+      transform: rotate(180deg); }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 14px; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar a {
+      color: #FFF;
+      text-decoration: underline;
+      white-space: nowrap; }
+  dfn.enzuzo-gpc-tooltip-bar:hover > .dfn-enzuzo-tooltip-bar {
+    display: block; }
+  dfn.enzuzo-gpc-tooltip-bar svg {
+    margin-left: 4px;
+    cursor: pointer; }
+
+.notification-main {
+  display: flex;
+  position: fixed;
+  z-index: 501;
+  box-sizing: border-box; }
+  .notification-main.hasCookieIcon .cookie-icon {
+    display: flex; }
+  .notification-main.notification-default {
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default {
+        flex-direction: column; } }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottom;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default .notification-buttons {
+      flex-wrap: wrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 1280px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-wrap: nowrap; } }
+    .notification-main.notification-default .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-default-top {
+    top: calc(0px + 0px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default-top {
+        flex-direction: column; } }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-pop {
+      animation-name: popTop;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTop;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-default-top .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default-top .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default-top .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default-top .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default-top .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default-top .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default-top .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-bottom-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    top: calc(0px + 0px);
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-top-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-bottom-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    top: calc(20px + 0px);
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-top-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-default .cookie-icon, .notification-main.notification-default-top .cookie-icon, .notification-main.notification-bottom-center .cookie-icon, .notification-main.notification-top-center .cookie-icon, .notification-main.notification-bottom-center-floating .cookie-icon, .notification-main.notification-top-center-floating .cookie-icon {
+    margin-right: 10px; }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default .notification-buttons, .notification-main.notification-default-top .notification-buttons, .notification-main.notification-bottom-center .notification-buttons, .notification-main.notification-top-center .notification-buttons, .notification-main.notification-bottom-center-floating .notification-buttons, .notification-main.notification-top-center-floating .notification-buttons {
+      width: 100%; } }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default.hasCookieIcon .cookie-icon, .notification-main.notification-default-top.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center.hasCookieIcon .cookie-icon, .notification-main.notification-top-center.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center-floating.hasCookieIcon .cookie-icon, .notification-main.notification-top-center-floating.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px;
+      position: absolute; }
+    .notification-main.notification-default.hasCookieIcon .notification-text, .notification-main.notification-default-top.hasCookieIcon .notification-text, .notification-main.notification-bottom-center.hasCookieIcon .notification-text, .notification-main.notification-top-center.hasCookieIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCookieIcon .notification-text, .notification-main.notification-top-center-floating.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.notification-default.hasCloseIcon .close-banner-button, .notification-main.notification-default-top.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center.hasCloseIcon .close-banner-button, .notification-main.notification-top-center.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center-floating.hasCloseIcon .close-banner-button, .notification-main.notification-top-center-floating.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px;
+      position: absolute; }
+    .notification-main.notification-default.hasCloseIcon .notification-text, .notification-main.notification-default-top.hasCloseIcon .notification-text, .notification-main.notification-bottom-center.hasCloseIcon .notification-text, .notification-main.notification-top-center.hasCloseIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCloseIcon .notification-text, .notification-main.notification-top-center-floating.hasCloseIcon .notification-text {
+      padding-right: 24px; } }
+  .notification-main.notification-center {
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-center {
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.center-small .cookie-icon {
+      top: 19px;
+      left: 12px; }
+    .notification-main.notification-center.center-small .close-banner-button {
+      top: 10px;
+      right: 10px; }
+    .notification-main.notification-center.center-medium .cookie-icon {
+      top: 27px;
+      left: 20px; }
+    .notification-main.notification-center.center-medium .close-banner-button {
+      top: 18px;
+      right: 20px; }
+    .notification-main.notification-center.center-large .cookie-icon {
+      top: 34px;
+      left: 28px; }
+      .center-edgeless .notification-main.notification-center.center-large .cookie-icon {
+        top: 5px;
+        left: 5px; }
+    .notification-main.notification-center.center-large .close-banner-button {
+      top: 26px;
+      right: 34px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-small {
+      padding-right: 22px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-medium {
+      padding-right: 24px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-large {
+      padding-right: 28px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-small {
+      padding-right: 32px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-medium {
+      padding-right: 40px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-large {
+      padding-right: 48px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-small {
+      padding-left: 24px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-medium {
+      padding-left: 26px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-large {
+      padding-left: 30px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-small {
+      padding-left: 42px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-medium {
+      padding-left: 50px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-large {
+      padding-left: 58px; }
+    .notification-main.notification-center .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-center .button-default, .notification-main.notification-center .button-border, .notification-main.notification-center .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-center .button-default:last-of-type, .notification-main.notification-center .button-border:last-of-type, .notification-main.notification-center .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-center .button-border {
+      background: none; }
+    .notification-main.notification-center .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-center .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-center #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-center #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right {
+    bottom: 20px;
+    flex-direction: column;
+    right: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-right {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-slide {
+      animation-name: slideRight;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-left {
+    bottom: 20px;
+    flex-direction: column;
+    left: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-left {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-slide {
+      animation-name: slideLeft;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right, .notification-main.notification-bottom-left {
+    /* Buttons */ }
+    .notification-main.notification-bottom-right .cookieButtonWrap, .notification-main.notification-bottom-left .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-bottom-right .button-default, .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-right .button-rounded, .notification-main.notification-bottom-left .button-default, .notification-main.notification-bottom-left .button-border, .notification-main.notification-bottom-left .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-bottom-right .button-default:last-of-type, .notification-main.notification-bottom-right .button-border:last-of-type, .notification-main.notification-bottom-right .button-rounded:last-of-type, .notification-main.notification-bottom-left .button-default:last-of-type, .notification-main.notification-bottom-left .button-border:last-of-type, .notification-main.notification-bottom-left .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-left .button-border {
+      background: none; }
+    .notification-main.notification-bottom-right .button-edgeless, .notification-main.notification-bottom-left .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-bottom-right .close-banner-button, .notification-main.notification-bottom-left .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-bottom-right .cookie-icon, .notification-main.notification-bottom-left .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+  .notification-main.notification-bottom-right .notification-desc, .notification-main.notification-bottom-left .notification-desc, .notification-main.notification-center .notification-desc {
+    flex-direction: column;
+    align-items: flex-start; }
+    .notification-main.notification-bottom-right .notification-desc a, .notification-main.notification-bottom-left .notification-desc a, .notification-main.notification-center .notification-desc a {
+      margin: 0; }
+    .notification-main.notification-bottom-right .notification-desc.hasGPC, .notification-main.notification-bottom-left .notification-desc.hasGPC, .notification-main.notification-center .notification-desc.hasGPC {
+      flex-direction: column; }
+      .notification-main.notification-bottom-right .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-bottom-left .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-center .notification-desc.hasGPC .enzuzo-gpc-status {
+        margin-top: 8px; }
+  .notification-main.notification-bottom-right .notification-buttons, .notification-main.notification-bottom-left .notification-buttons, .notification-main.notification-center .notification-buttons {
+    flex-wrap: wrap; }
+  .notification-main.default-small, .notification-main.default-top-small {
+    padding: 4px 8px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-small #notificationManagerLink, .notification-main.default-top-small #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-medium, .notification-main.default-top-medium {
+    padding: 8px 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-medium #notificationManagerLink, .notification-main.default-top-medium #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-large, .notification-main.default-top-large {
+    padding: 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-large #notificationManagerLink, .notification-main.default-top-large #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-small .notification-desc, .notification-main.default-medium .notification-desc, .notification-main.default-large .notification-desc, .notification-main.default-top-small .notification-desc, .notification-main.default-top-medium .notification-desc, .notification-main.default-top-large .notification-desc {
+    margin-bottom: 0px; }
+  .notification-main.bottom-center-small, .notification-main.top-center-small {
+    padding: 4px 8px; }
+  .notification-main.bottom-center-medium, .notification-main.top-center-medium {
+    padding: 8px 16px; }
+  .notification-main.bottom-center-large, .notification-main.top-center-large {
+    padding: 16px; }
+  .notification-main.bottom-center-floating-small, .notification-main.top-center-floating-small {
+    padding: 8px; }
+  .notification-main.bottom-center-floating-medium, .notification-main.top-center-floating-medium {
+    padding: 12px 16px; }
+  .notification-main.bottom-center-floating-large, .notification-main.top-center-floating-large {
+    padding: 18px 16px; }
+  .notification-main.center-small {
+    width: 360px;
+    padding: 16px; }
+  .notification-main.center-medium {
+    width: 400px;
+    padding: 24px; }
+  .notification-main.center-large {
+    width: 450px;
+    padding: 32px; }
+  .notification-main.bottom-left-small, .notification-main.bottom-right-small {
+    width: 250px;
+    padding: 8px; }
+    .notification-main.bottom-left-small.hasCookieIcon .cookie-icon, .notification-main.bottom-right-small.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px; }
+    .notification-main.bottom-left-small.hasCookieIcon .notification-text, .notification-main.bottom-right-small.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.bottom-left-small.hasCloseIcon .close-banner-button, .notification-main.bottom-right-small.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px; }
+    .notification-main.bottom-left-small.hasCloseIcon .notification-text, .notification-main.bottom-right-small.hasCloseIcon .notification-text {
+      padding-right: 24px; }
+  .notification-main.bottom-left-medium, .notification-main.bottom-right-medium {
+    width: 270px;
+    padding: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .cookie-icon, .notification-main.bottom-right-medium.hasCookieIcon .cookie-icon {
+      top: 18px;
+      left: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .notification-text, .notification-main.bottom-right-medium.hasCookieIcon .notification-text {
+      padding-left: 28px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .close-banner-button, .notification-main.bottom-right-medium.hasCloseIcon .close-banner-button {
+      right: 12px;
+      top: 12px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .notification-text, .notification-main.bottom-right-medium.hasCloseIcon .notification-text {
+      padding-right: 28px; }
+  .notification-main.bottom-left-large, .notification-main.bottom-right-large {
+    width: 300px;
+    padding: 24px; }
+    .notification-main.bottom-left-large.hasCookieIcon .cookie-icon, .notification-main.bottom-right-large.hasCookieIcon .cookie-icon {
+      top: 26px;
+      left: 16px; }
+    .notification-main.bottom-left-large.hasCookieIcon .notification-text, .notification-main.bottom-right-large.hasCookieIcon .notification-text {
+      padding-left: 20px; }
+    .notification-main.bottom-left-large.hasCloseIcon .close-banner-button, .notification-main.bottom-right-large.hasCloseIcon .close-banner-button {
+      right: 14px;
+      top: 22px; }
+    .notification-main.bottom-left-large.hasCloseIcon .notification-text, .notification-main.bottom-right-large.hasCloseIcon .notification-text {
+      padding-right: 20px; }
+  .notification-main.has-edgeless {
+    padding: 0;
+    align-items: stretch; }
+    .notification-main.has-edgeless .notification-desc {
+      margin: 0; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .notification-desc {
+          flex-wrap: wrap; } }
+    .notification-main.has-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center; }
+    .notification-main.has-edgeless #cookie-notification__decline {
+      margin-bottom: 8px; }
+    .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+      font-size: 13px;
+      margin: 0 auto; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+          text-align: center; } }
+  .notification-main.default-edgeless .cookie-icon, .notification-main.bottom-center-edgeless .cookie-icon, .notification-main.bottom-center-floating-edgeless .cookie-icon, .notification-main.default-top-edgeless .cookie-icon, .notification-main.top-center-edgeless .cookie-icon, .notification-main.top-center-floating-edgeless .cookie-icon {
+    padding-left: 8px; }
+  .notification-main.default-edgeless .notification-text-small, .notification-main.bottom-center-edgeless .notification-text-small, .notification-main.bottom-center-floating-edgeless .notification-text-small, .notification-main.default-top-edgeless .notification-text-small, .notification-main.top-center-edgeless .notification-text-small, .notification-main.top-center-floating-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 4px 8px; }
+  .notification-main.default-edgeless .notification-text-medium, .notification-main.bottom-center-edgeless .notification-text-medium, .notification-main.bottom-center-floating-edgeless .notification-text-medium, .notification-main.default-top-edgeless .notification-text-medium, .notification-main.top-center-edgeless .notification-text-medium, .notification-main.top-center-floating-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 8px 16px; }
+  .notification-main.default-edgeless .notification-text-large, .notification-main.bottom-center-edgeless .notification-text-large, .notification-main.bottom-center-floating-edgeless .notification-text-large, .notification-main.default-top-edgeless .notification-text-large, .notification-main.top-center-edgeless .notification-text-large, .notification-main.top-center-floating-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 16px; }
+  .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+    padding-right: 40px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+        padding-right: 0; } }
+  @media only screen and (max-width: 800px) {
+    .notification-main.default-edgeless .notification-buttons, .notification-main.bottom-center-edgeless .notification-buttons, .notification-main.bottom-center-floating-edgeless .notification-buttons, .notification-main.default-top-edgeless .notification-buttons, .notification-main.top-center-edgeless .notification-buttons, .notification-main.top-center-floating-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; } }
+  .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+    font-size: 13px;
+    margin: auto 18px !important; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+        margin: 0 auto !important; } }
+  .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+    margin-right: 0 !important;
+    top: 50%; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+        margin: 0 auto !important; } }
+  .notification-main.center-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 16px; }
+  .notification-main.center-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 24px; }
+  .notification-main.center-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 32px; }
+  .notification-main.center-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-edgeless .notification-text-small, .notification-main.bottom-right-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 8px 8px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-medium, .notification-main.bottom-right-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 16px 16px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-large, .notification-main.bottom-right-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 24px 24px 0; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .cookie-icon {
+    top: 10px;
+    left: 10px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .notification-desc {
+    padding-left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon {
+    top: 14px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .notification-desc {
+    padding-left: 20px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .cookie-icon {
+    top: 26px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .notification-desc {
+    padding-left: 26px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .close-banner-button {
+    top: 5px;
+    right: 8px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .notification-desc {
+    padding-right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button {
+    top: 11px;
+    right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .notification-desc {
+    padding-right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .close-banner-button {
+    top: 22px;
+    right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .notification-desc {
+    padding-right: 26px; }
+  .notification-main.bottom-left-edgeless .notification-buttons, .notification-main.bottom-right-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+    margin-bottom: 12px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+    margin-bottom: 14px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main .notification-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-family: inherit;
+    justify-content: center;
+    line-height: 1.5em;
+    text-align: left; }
+    .notification-main .notification-text-small {
+      font-size: 12px; }
+    .notification-main .notification-text-medium {
+      font-size: 13px; }
+    .notification-main .notification-text-large {
+      font-size: 14px; }
+    .notification-main .notification-text a {
+      text-decoration: underline;
+      white-space: nowrap; }
+  .notification-main .notification-desc {
+    display: flex;
+    align-items: center; }
+    .notification-main .notification-desc.hasGPC {
+      flex-direction: row; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-desc {
+        flex-direction: column;
+        align-items: flex-start; }
+        .notification-main .notification-desc.hasGPC {
+          flex-direction: column; } }
+  .notification-main .notification-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-buttons {
+        flex-wrap: wrap; } }
+    .notification-main .notification-buttons .cookieButtonWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media only screen and (max-width: 480px) {
+        .notification-main .notification-buttons .cookieButtonWrap {
+          width: 100%;
+          flex-direction: column; } }
+    .notification-main .notification-buttons .close-banner-button {
+      display: block; }
+      .notification-main .notification-buttons .close-banner-button:before, .notification-main .notification-buttons .close-banner-button:after {
+        content: "";
+        left: 15px;
+        height: 16px;
+        position: absolute;
+        top: 6px;
+        width: 2px; }
+      .notification-main .notification-buttons .close-banner-button:before {
+        transform: rotate(45deg); }
+      .notification-main .notification-buttons .close-banner-button:after {
+        transform: rotate(135deg); }
+      .notification-main .notification-buttons .close-banner-button:hover {
+        cursor: pointer; }
+  .notification-main .notification-button {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+    width: auto !important;
+    transition: all ease 0.3s;
+    white-space: nowrap;
+    font-family: inherit; }
+    @media only screen and (max-width: 480px) {
+      .notification-main .notification-button.button-default, .notification-main .notification-button.button-border, .notification-main .notification-button.button-rounded {
+        margin: 4px 0 !important;
+        width: 100% !important; } }
+  .notification-main .buttons-small button {
+    padding: 4px 12px; }
+  .notification-main .buttons-medium button {
+    padding: 4px 12px; }
+  .notification-main .buttons-large button {
+    padding: 8px 24px; }
+  .notification-main .button-default {
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-border {
+    border: 1px solid;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-rounded {
+    border: none !important;
+    border-radius: 9px;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-edgeless {
+    border-radius: 0 !important;
+    border: none !important; }
+  .notification-main #notificationManagerLink {
+    font-size: 13px;
+    margin: 0 18px;
+    padding: 12px 0;
+    white-space: nowrap; }
+    .notification-main #notificationManagerLink:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+  .notification-main.enzuzo-shadow {
+    box-shadow: 0px 0px 24px -5px black; }
+
+.bodyLock {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  overflow: scroll !important; }
+  .bodyLock:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2400;
+    background-color: rgba(0, 0, 0, 0.5); }
+/* Animations */
+/* Slide Animations */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideBottomCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideTopCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideBottomCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideTopCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideCenter {
+  0% {
+    transform: translate(-50%, 250%);
+    opacity: 0; }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1; } }
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-200%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(200%); }
+  100% {
+    transform: translateY(0%); } }
+
+/* Fade Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Pop Animations */
+@keyframes popCenter {
+  0% {
+    transform: translate(-50%, -50%) scale(0); }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes popBottom {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popTop {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popBottomCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popTopCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popBottomCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+@keyframes popTopCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+.cookie-icon {
+  display: flex;
+  align-items: center;
+  display: none;
+  align-self: center; }
+
+dfn.enzuzo-gpc-tooltip-bar {
+  position: relative;
+  display: inherit;
+  align-items: center; }
+  dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+    display: none;
+    position: absolute;
+    right: -22px;
+    z-index: 30;
+    width: 275px;
+    height: auto;
+    padding: 4px 8px;
+    min-height: 0;
+    background: rgba(97, 97, 97, 0.9);
+    border-radius: 4px;
+    color: #FFF;
+    border: none; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      position: absolute;
+      content: "";
+      bottom: -6px;
+      right: 25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 6px 6px;
+      border-color: transparent transparent rgba(97, 97, 97, 0.9) transparent;
+      transform: rotate(180deg); }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 14px; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar a {
+      color: #FFF;
+      text-decoration: underline;
+      white-space: nowrap; }
+  dfn.enzuzo-gpc-tooltip-bar:hover > .dfn-enzuzo-tooltip-bar {
+    display: block; }
+  dfn.enzuzo-gpc-tooltip-bar svg {
+    margin-left: 4px;
+    cursor: pointer; }
+
+.notification-main {
+  display: flex;
+  position: fixed;
+  z-index: 501;
+  box-sizing: border-box; }
+  .notification-main.hasCookieIcon .cookie-icon {
+    display: flex; }
+  .notification-main.notification-default {
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default {
+        flex-direction: column; } }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottom;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default .notification-buttons {
+      flex-wrap: wrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 1280px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-wrap: nowrap; } }
+    .notification-main.notification-default .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-default-top {
+    top: calc(0px + 0px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default-top {
+        flex-direction: column; } }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-pop {
+      animation-name: popTop;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTop;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-default-top .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default-top .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default-top .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default-top .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default-top .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default-top .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default-top .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-bottom-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    top: calc(0px + 0px);
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-top-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-bottom-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    top: calc(20px + 0px);
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-top-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-default .cookie-icon, .notification-main.notification-default-top .cookie-icon, .notification-main.notification-bottom-center .cookie-icon, .notification-main.notification-top-center .cookie-icon, .notification-main.notification-bottom-center-floating .cookie-icon, .notification-main.notification-top-center-floating .cookie-icon {
+    margin-right: 10px; }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default .notification-buttons, .notification-main.notification-default-top .notification-buttons, .notification-main.notification-bottom-center .notification-buttons, .notification-main.notification-top-center .notification-buttons, .notification-main.notification-bottom-center-floating .notification-buttons, .notification-main.notification-top-center-floating .notification-buttons {
+      width: 100%; } }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default.hasCookieIcon .cookie-icon, .notification-main.notification-default-top.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center.hasCookieIcon .cookie-icon, .notification-main.notification-top-center.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center-floating.hasCookieIcon .cookie-icon, .notification-main.notification-top-center-floating.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px;
+      position: absolute; }
+    .notification-main.notification-default.hasCookieIcon .notification-text, .notification-main.notification-default-top.hasCookieIcon .notification-text, .notification-main.notification-bottom-center.hasCookieIcon .notification-text, .notification-main.notification-top-center.hasCookieIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCookieIcon .notification-text, .notification-main.notification-top-center-floating.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.notification-default.hasCloseIcon .close-banner-button, .notification-main.notification-default-top.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center.hasCloseIcon .close-banner-button, .notification-main.notification-top-center.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center-floating.hasCloseIcon .close-banner-button, .notification-main.notification-top-center-floating.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px;
+      position: absolute; }
+    .notification-main.notification-default.hasCloseIcon .notification-text, .notification-main.notification-default-top.hasCloseIcon .notification-text, .notification-main.notification-bottom-center.hasCloseIcon .notification-text, .notification-main.notification-top-center.hasCloseIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCloseIcon .notification-text, .notification-main.notification-top-center-floating.hasCloseIcon .notification-text {
+      padding-right: 24px; } }
+  .notification-main.notification-center {
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-center {
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.center-small .cookie-icon {
+      top: 19px;
+      left: 12px; }
+    .notification-main.notification-center.center-small .close-banner-button {
+      top: 10px;
+      right: 10px; }
+    .notification-main.notification-center.center-medium .cookie-icon {
+      top: 27px;
+      left: 20px; }
+    .notification-main.notification-center.center-medium .close-banner-button {
+      top: 18px;
+      right: 20px; }
+    .notification-main.notification-center.center-large .cookie-icon {
+      top: 34px;
+      left: 28px; }
+      .center-edgeless .notification-main.notification-center.center-large .cookie-icon {
+        top: 5px;
+        left: 5px; }
+    .notification-main.notification-center.center-large .close-banner-button {
+      top: 26px;
+      right: 34px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-small {
+      padding-right: 22px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-medium {
+      padding-right: 24px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-large {
+      padding-right: 28px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-small {
+      padding-right: 32px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-medium {
+      padding-right: 40px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-large {
+      padding-right: 48px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-small {
+      padding-left: 24px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-medium {
+      padding-left: 26px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-large {
+      padding-left: 30px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-small {
+      padding-left: 42px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-medium {
+      padding-left: 50px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-large {
+      padding-left: 58px; }
+    .notification-main.notification-center .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-center .button-default, .notification-main.notification-center .button-border, .notification-main.notification-center .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-center .button-default:last-of-type, .notification-main.notification-center .button-border:last-of-type, .notification-main.notification-center .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-center .button-border {
+      background: none; }
+    .notification-main.notification-center .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-center .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-center #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-center #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right {
+    bottom: 20px;
+    flex-direction: column;
+    right: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-right {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-slide {
+      animation-name: slideRight;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-left {
+    bottom: 20px;
+    flex-direction: column;
+    left: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-left {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-slide {
+      animation-name: slideLeft;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right, .notification-main.notification-bottom-left {
+    /* Buttons */ }
+    .notification-main.notification-bottom-right .cookieButtonWrap, .notification-main.notification-bottom-left .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-bottom-right .button-default, .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-right .button-rounded, .notification-main.notification-bottom-left .button-default, .notification-main.notification-bottom-left .button-border, .notification-main.notification-bottom-left .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-bottom-right .button-default:last-of-type, .notification-main.notification-bottom-right .button-border:last-of-type, .notification-main.notification-bottom-right .button-rounded:last-of-type, .notification-main.notification-bottom-left .button-default:last-of-type, .notification-main.notification-bottom-left .button-border:last-of-type, .notification-main.notification-bottom-left .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-left .button-border {
+      background: none; }
+    .notification-main.notification-bottom-right .button-edgeless, .notification-main.notification-bottom-left .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-bottom-right .close-banner-button, .notification-main.notification-bottom-left .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-bottom-right .cookie-icon, .notification-main.notification-bottom-left .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+  .notification-main.notification-bottom-right .notification-desc, .notification-main.notification-bottom-left .notification-desc, .notification-main.notification-center .notification-desc {
+    flex-direction: column;
+    align-items: flex-start; }
+    .notification-main.notification-bottom-right .notification-desc a, .notification-main.notification-bottom-left .notification-desc a, .notification-main.notification-center .notification-desc a {
+      margin: 0; }
+    .notification-main.notification-bottom-right .notification-desc.hasGPC, .notification-main.notification-bottom-left .notification-desc.hasGPC, .notification-main.notification-center .notification-desc.hasGPC {
+      flex-direction: column; }
+      .notification-main.notification-bottom-right .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-bottom-left .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-center .notification-desc.hasGPC .enzuzo-gpc-status {
+        margin-top: 8px; }
+  .notification-main.notification-bottom-right .notification-buttons, .notification-main.notification-bottom-left .notification-buttons, .notification-main.notification-center .notification-buttons {
+    flex-wrap: wrap; }
+  .notification-main.default-small, .notification-main.default-top-small {
+    padding: 4px 8px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-small #notificationManagerLink, .notification-main.default-top-small #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-medium, .notification-main.default-top-medium {
+    padding: 8px 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-medium #notificationManagerLink, .notification-main.default-top-medium #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-large, .notification-main.default-top-large {
+    padding: 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-large #notificationManagerLink, .notification-main.default-top-large #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-small .notification-desc, .notification-main.default-medium .notification-desc, .notification-main.default-large .notification-desc, .notification-main.default-top-small .notification-desc, .notification-main.default-top-medium .notification-desc, .notification-main.default-top-large .notification-desc {
+    margin-bottom: 0px; }
+  .notification-main.bottom-center-small, .notification-main.top-center-small {
+    padding: 4px 8px; }
+  .notification-main.bottom-center-medium, .notification-main.top-center-medium {
+    padding: 8px 16px; }
+  .notification-main.bottom-center-large, .notification-main.top-center-large {
+    padding: 16px; }
+  .notification-main.bottom-center-floating-small, .notification-main.top-center-floating-small {
+    padding: 8px; }
+  .notification-main.bottom-center-floating-medium, .notification-main.top-center-floating-medium {
+    padding: 12px 16px; }
+  .notification-main.bottom-center-floating-large, .notification-main.top-center-floating-large {
+    padding: 18px 16px; }
+  .notification-main.center-small {
+    width: 360px;
+    padding: 16px; }
+  .notification-main.center-medium {
+    width: 400px;
+    padding: 24px; }
+  .notification-main.center-large {
+    width: 450px;
+    padding: 32px; }
+  .notification-main.bottom-left-small, .notification-main.bottom-right-small {
+    width: 250px;
+    padding: 8px; }
+    .notification-main.bottom-left-small.hasCookieIcon .cookie-icon, .notification-main.bottom-right-small.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px; }
+    .notification-main.bottom-left-small.hasCookieIcon .notification-text, .notification-main.bottom-right-small.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.bottom-left-small.hasCloseIcon .close-banner-button, .notification-main.bottom-right-small.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px; }
+    .notification-main.bottom-left-small.hasCloseIcon .notification-text, .notification-main.bottom-right-small.hasCloseIcon .notification-text {
+      padding-right: 24px; }
+  .notification-main.bottom-left-medium, .notification-main.bottom-right-medium {
+    width: 270px;
+    padding: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .cookie-icon, .notification-main.bottom-right-medium.hasCookieIcon .cookie-icon {
+      top: 18px;
+      left: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .notification-text, .notification-main.bottom-right-medium.hasCookieIcon .notification-text {
+      padding-left: 28px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .close-banner-button, .notification-main.bottom-right-medium.hasCloseIcon .close-banner-button {
+      right: 12px;
+      top: 12px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .notification-text, .notification-main.bottom-right-medium.hasCloseIcon .notification-text {
+      padding-right: 28px; }
+  .notification-main.bottom-left-large, .notification-main.bottom-right-large {
+    width: 300px;
+    padding: 24px; }
+    .notification-main.bottom-left-large.hasCookieIcon .cookie-icon, .notification-main.bottom-right-large.hasCookieIcon .cookie-icon {
+      top: 26px;
+      left: 16px; }
+    .notification-main.bottom-left-large.hasCookieIcon .notification-text, .notification-main.bottom-right-large.hasCookieIcon .notification-text {
+      padding-left: 20px; }
+    .notification-main.bottom-left-large.hasCloseIcon .close-banner-button, .notification-main.bottom-right-large.hasCloseIcon .close-banner-button {
+      right: 14px;
+      top: 22px; }
+    .notification-main.bottom-left-large.hasCloseIcon .notification-text, .notification-main.bottom-right-large.hasCloseIcon .notification-text {
+      padding-right: 20px; }
+  .notification-main.has-edgeless {
+    padding: 0;
+    align-items: stretch; }
+    .notification-main.has-edgeless .notification-desc {
+      margin: 0; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .notification-desc {
+          flex-wrap: wrap; } }
+    .notification-main.has-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center; }
+    .notification-main.has-edgeless #cookie-notification__decline {
+      margin-bottom: 8px; }
+    .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+      font-size: 13px;
+      margin: 0 auto; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+          text-align: center; } }
+  .notification-main.default-edgeless .cookie-icon, .notification-main.bottom-center-edgeless .cookie-icon, .notification-main.bottom-center-floating-edgeless .cookie-icon, .notification-main.default-top-edgeless .cookie-icon, .notification-main.top-center-edgeless .cookie-icon, .notification-main.top-center-floating-edgeless .cookie-icon {
+    padding-left: 8px; }
+  .notification-main.default-edgeless .notification-text-small, .notification-main.bottom-center-edgeless .notification-text-small, .notification-main.bottom-center-floating-edgeless .notification-text-small, .notification-main.default-top-edgeless .notification-text-small, .notification-main.top-center-edgeless .notification-text-small, .notification-main.top-center-floating-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 4px 8px; }
+  .notification-main.default-edgeless .notification-text-medium, .notification-main.bottom-center-edgeless .notification-text-medium, .notification-main.bottom-center-floating-edgeless .notification-text-medium, .notification-main.default-top-edgeless .notification-text-medium, .notification-main.top-center-edgeless .notification-text-medium, .notification-main.top-center-floating-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 8px 16px; }
+  .notification-main.default-edgeless .notification-text-large, .notification-main.bottom-center-edgeless .notification-text-large, .notification-main.bottom-center-floating-edgeless .notification-text-large, .notification-main.default-top-edgeless .notification-text-large, .notification-main.top-center-edgeless .notification-text-large, .notification-main.top-center-floating-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 16px; }
+  .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+    padding-right: 40px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+        padding-right: 0; } }
+  @media only screen and (max-width: 800px) {
+    .notification-main.default-edgeless .notification-buttons, .notification-main.bottom-center-edgeless .notification-buttons, .notification-main.bottom-center-floating-edgeless .notification-buttons, .notification-main.default-top-edgeless .notification-buttons, .notification-main.top-center-edgeless .notification-buttons, .notification-main.top-center-floating-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; } }
+  .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+    font-size: 13px;
+    margin: auto 18px !important; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+        margin: 0 auto !important; } }
+  .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+    margin-right: 0 !important;
+    top: 50%; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+        margin: 0 auto !important; } }
+  .notification-main.center-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 16px; }
+  .notification-main.center-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 24px; }
+  .notification-main.center-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 32px; }
+  .notification-main.center-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-edgeless .notification-text-small, .notification-main.bottom-right-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 8px 8px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-medium, .notification-main.bottom-right-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 16px 16px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-large, .notification-main.bottom-right-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 24px 24px 0; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .cookie-icon {
+    top: 10px;
+    left: 10px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .notification-desc {
+    padding-left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon {
+    top: 14px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .notification-desc {
+    padding-left: 20px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .cookie-icon {
+    top: 26px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .notification-desc {
+    padding-left: 26px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .close-banner-button {
+    top: 5px;
+    right: 8px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .notification-desc {
+    padding-right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button {
+    top: 11px;
+    right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .notification-desc {
+    padding-right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .close-banner-button {
+    top: 22px;
+    right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .notification-desc {
+    padding-right: 26px; }
+  .notification-main.bottom-left-edgeless .notification-buttons, .notification-main.bottom-right-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+    margin-bottom: 12px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+    margin-bottom: 14px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main .notification-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-family: inherit;
+    justify-content: center;
+    line-height: 1.5em;
+    text-align: left; }
+    .notification-main .notification-text-small {
+      font-size: 12px; }
+    .notification-main .notification-text-medium {
+      font-size: 13px; }
+    .notification-main .notification-text-large {
+      font-size: 14px; }
+    .notification-main .notification-text a {
+      text-decoration: underline;
+      white-space: nowrap; }
+  .notification-main .notification-desc {
+    display: flex;
+    align-items: center; }
+    .notification-main .notification-desc.hasGPC {
+      flex-direction: row; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-desc {
+        flex-direction: column;
+        align-items: flex-start; }
+        .notification-main .notification-desc.hasGPC {
+          flex-direction: column; } }
+  .notification-main .notification-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-buttons {
+        flex-wrap: wrap; } }
+    .notification-main .notification-buttons .cookieButtonWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media only screen and (max-width: 480px) {
+        .notification-main .notification-buttons .cookieButtonWrap {
+          width: 100%;
+          flex-direction: column; } }
+    .notification-main .notification-buttons .close-banner-button {
+      display: block; }
+      .notification-main .notification-buttons .close-banner-button:before, .notification-main .notification-buttons .close-banner-button:after {
+        content: "";
+        left: 15px;
+        height: 16px;
+        position: absolute;
+        top: 6px;
+        width: 2px; }
+      .notification-main .notification-buttons .close-banner-button:before {
+        transform: rotate(45deg); }
+      .notification-main .notification-buttons .close-banner-button:after {
+        transform: rotate(135deg); }
+      .notification-main .notification-buttons .close-banner-button:hover {
+        cursor: pointer; }
+  .notification-main .notification-button {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+    width: auto !important;
+    transition: all ease 0.3s;
+    white-space: nowrap;
+    font-family: inherit; }
+    @media only screen and (max-width: 480px) {
+      .notification-main .notification-button.button-default, .notification-main .notification-button.button-border, .notification-main .notification-button.button-rounded {
+        margin: 4px 0 !important;
+        width: 100% !important; } }
+  .notification-main .buttons-small button {
+    padding: 4px 12px; }
+  .notification-main .buttons-medium button {
+    padding: 4px 12px; }
+  .notification-main .buttons-large button {
+    padding: 8px 24px; }
+  .notification-main .button-default {
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-border {
+    border: 1px solid;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-rounded {
+    border: none !important;
+    border-radius: 9px;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-edgeless {
+    border-radius: 0 !important;
+    border: none !important; }
+  .notification-main #notificationManagerLink {
+    font-size: 13px;
+    margin: 0 18px;
+    padding: 12px 0;
+    white-space: nowrap; }
+    .notification-main #notificationManagerLink:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+  .notification-main.enzuzo-shadow {
+    box-shadow: 0px 0px 24px -5px black; }
+
+.bodyLock {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  overflow: scroll !important; }
+  .bodyLock:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2400;
+    background-color: rgba(0, 0, 0, 0.5); }
+/* Animations */
+/* Slide Animations */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideBottomCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideTopCenter {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(0%) translateX(-50%); } }
+
+@keyframes slideBottomCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideTopCenterFloating {
+  0% {
+    transform: translateY(100%) translateX(-50%); }
+  100% {
+    transform: translateY(-20%) translateX(-50%); } }
+
+@keyframes slideCenter {
+  0% {
+    transform: translate(-50%, 250%);
+    opacity: 0; }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1; } }
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-200%); }
+  100% {
+    transform: translateY(0%); } }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(200%); }
+  100% {
+    transform: translateY(0%); } }
+
+/* Fade Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Pop Animations */
+@keyframes popCenter {
+  0% {
+    transform: translate(-50%, -50%) scale(0); }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes popBottom {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popTop {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes popBottomCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popTopCenter {
+  0% {
+    transform: translateX(-50%) scale(0); }
+  50% {
+    transform: translateX(-50%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) scale(1); } }
+
+@keyframes popBottomCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+@keyframes popTopCenterFloating {
+  0% {
+    transform: translateX(-50%) translateY(-20%) scale(0); }
+  50% {
+    transform: translateX(-50%) translateY(-20%) scale(1.2); }
+  100% {
+    transform: translateX(-50%) translateY(-20%) scale(1); } }
+
+.cookie-icon {
+  display: flex;
+  align-items: center;
+  display: none;
+  align-self: center; }
+
+dfn.enzuzo-gpc-tooltip-bar {
+  position: relative;
+  display: inherit;
+  align-items: center; }
+  dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+    display: none;
+    position: absolute;
+    right: -22px;
+    z-index: 30;
+    width: 275px;
+    height: auto;
+    padding: 4px 8px;
+    min-height: 0;
+    background: rgba(97, 97, 97, 0.9);
+    border-radius: 4px;
+    color: #FFF;
+    border: none; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      position: absolute;
+      content: "";
+      bottom: -6px;
+      right: 25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 6px 6px;
+      border-color: transparent transparent rgba(97, 97, 97, 0.9) transparent;
+      transform: rotate(180deg); }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 14px; }
+    dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar a {
+      color: #FFF;
+      text-decoration: underline;
+      white-space: nowrap; }
+  dfn.enzuzo-gpc-tooltip-bar:hover > .dfn-enzuzo-tooltip-bar {
+    display: block; }
+  dfn.enzuzo-gpc-tooltip-bar svg {
+    margin-left: 4px;
+    cursor: pointer; }
+
+.notification-main {
+  display: flex;
+  position: fixed;
+  z-index: 501;
+  box-sizing: border-box; }
+  .notification-main.hasCookieIcon .cookie-icon {
+    display: flex; }
+  .notification-main.notification-default {
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default {
+        flex-direction: column; } }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottom;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default .notification-buttons {
+      flex-wrap: wrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 1280px) {
+        .notification-main.notification-default .notification-buttons {
+          flex-wrap: nowrap; } }
+    .notification-main.notification-default .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-default dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-default-top {
+    top: calc(0px + 0px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-default-top {
+        flex-direction: column; } }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-pop {
+      animation-name: popTop;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTop;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-default-top.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-default-top .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-default-top .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-default-top .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-default-top .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-default-top .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-default-top .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-default-top .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-default-top .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-default-top .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-default-top dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-bottom-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-bottom-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85% !important;
+    align-self: center;
+    top: calc(0px + 0px);
+    left: 50%;
+    transform: translateX(-50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenter;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    @media only screen and (max-width: 800px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-direction: column; } }
+    @media only screen and (max-width: 1280px) {
+      .notification-main.notification-top-center .notification-buttons {
+        flex-wrap: nowrap; } }
+    .notification-main.notification-top-center .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-bottom-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottomCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideBottomCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-bottom-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-bottom-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-bottom-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-bottom-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-bottom-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-bottom-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-top-center-floating {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80% !important;
+    align-self: center;
+    top: calc(20px + 0px);
+    left: 50%;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-top-center-floating {
+        width: calc(100% - 32px) !important;
+        flex-direction: column; } }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-pop {
+      animation-name: popTopCenterFloating;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-slide {
+      animation-name: slideTopCenterFloating;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-top-center-floating .notification-buttons {
+      flex-wrap: nowrap; }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-direction: column; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .notification-buttons {
+          flex-wrap: wrap; } }
+    .notification-main.notification-top-center-floating .cookieButtonWrap {
+      text-align: center; }
+    .notification-main.notification-top-center-floating .closeTrigger {
+      padding-right: 32px; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .closeTrigger {
+          padding-right: 0; } }
+    .notification-main.notification-top-center-floating .button-edgeless {
+      border: none;
+      margin: 0 4px !important;
+      height: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          width: 100% !important;
+          margin: 4px 0 !important; } }
+      @media only screen and (max-width: 800px) {
+        .notification-main.notification-top-center-floating .button-edgeless {
+          border: none !important;
+          margin: 4px !important; } }
+      .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+        margin-right: 0 !important; }
+        @media only screen and (max-width: 480px) {
+          .notification-main.notification-top-center-floating .button-edgeless:last-of-type {
+            margin-bottom: 0 !important; } }
+    .notification-main.notification-top-center-floating .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      position: absolute;
+      right: 5px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-top-center-floating .close-banner-button {
+          margin: 0 auto;
+          position: relative;
+          right: 0;
+          transform: none; } }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      top: 28px; }
+    .notification-main.notification-top-center-floating dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      top: -6px;
+      transform: rotate(0deg); }
+  .notification-main.notification-default .cookie-icon, .notification-main.notification-default-top .cookie-icon, .notification-main.notification-bottom-center .cookie-icon, .notification-main.notification-top-center .cookie-icon, .notification-main.notification-bottom-center-floating .cookie-icon, .notification-main.notification-top-center-floating .cookie-icon {
+    margin-right: 10px; }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default .notification-buttons, .notification-main.notification-default-top .notification-buttons, .notification-main.notification-bottom-center .notification-buttons, .notification-main.notification-top-center .notification-buttons, .notification-main.notification-bottom-center-floating .notification-buttons, .notification-main.notification-top-center-floating .notification-buttons {
+      width: 100%; } }
+  @media only screen and (max-width: 480px) {
+    .notification-main.notification-default.hasCookieIcon .cookie-icon, .notification-main.notification-default-top.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center.hasCookieIcon .cookie-icon, .notification-main.notification-top-center.hasCookieIcon .cookie-icon, .notification-main.notification-bottom-center-floating.hasCookieIcon .cookie-icon, .notification-main.notification-top-center-floating.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px;
+      position: absolute; }
+    .notification-main.notification-default.hasCookieIcon .notification-text, .notification-main.notification-default-top.hasCookieIcon .notification-text, .notification-main.notification-bottom-center.hasCookieIcon .notification-text, .notification-main.notification-top-center.hasCookieIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCookieIcon .notification-text, .notification-main.notification-top-center-floating.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.notification-default.hasCloseIcon .close-banner-button, .notification-main.notification-default-top.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center.hasCloseIcon .close-banner-button, .notification-main.notification-top-center.hasCloseIcon .close-banner-button, .notification-main.notification-bottom-center-floating.hasCloseIcon .close-banner-button, .notification-main.notification-top-center-floating.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px;
+      position: absolute; }
+    .notification-main.notification-default.hasCloseIcon .notification-text, .notification-main.notification-default-top.hasCloseIcon .notification-text, .notification-main.notification-bottom-center.hasCloseIcon .notification-text, .notification-main.notification-top-center.hasCloseIcon .notification-text, .notification-main.notification-bottom-center-floating.hasCloseIcon .notification-text, .notification-main.notification-top-center-floating.hasCloseIcon .notification-text {
+      padding-right: 24px; } }
+  .notification-main.notification-center {
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Buttons */ }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-center {
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-pop {
+      animation-name: popCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-slide {
+      animation-name: slideCenter;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-center.center-small .cookie-icon {
+      top: 19px;
+      left: 12px; }
+    .notification-main.notification-center.center-small .close-banner-button {
+      top: 10px;
+      right: 10px; }
+    .notification-main.notification-center.center-medium .cookie-icon {
+      top: 27px;
+      left: 20px; }
+    .notification-main.notification-center.center-medium .close-banner-button {
+      top: 18px;
+      right: 20px; }
+    .notification-main.notification-center.center-large .cookie-icon {
+      top: 34px;
+      left: 28px; }
+      .center-edgeless .notification-main.notification-center.center-large .cookie-icon {
+        top: 5px;
+        left: 5px; }
+    .notification-main.notification-center.center-large .close-banner-button {
+      top: 26px;
+      right: 34px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-small {
+      padding-right: 22px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-medium {
+      padding-right: 24px; }
+    .notification-main.notification-center.hasCloseIcon .notification-text-large {
+      padding-right: 28px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-small {
+      padding-right: 32px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-medium {
+      padding-right: 40px; }
+    .notification-main.notification-center.hasCloseIcon.center-edgeless .notification-text-large {
+      padding-right: 48px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-small {
+      padding-left: 24px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-medium {
+      padding-left: 26px; }
+    .notification-main.notification-center.hasCookieIcon .notification-text-large {
+      padding-left: 30px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-small {
+      padding-left: 42px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-medium {
+      padding-left: 50px; }
+    .notification-main.notification-center.hasCookieIcon.center-edgeless .notification-text-large {
+      padding-left: 58px; }
+    .notification-main.notification-center .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-center .button-default, .notification-main.notification-center .button-border, .notification-main.notification-center .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-center .button-default:last-of-type, .notification-main.notification-center .button-border:last-of-type, .notification-main.notification-center .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-center .button-border {
+      background: none; }
+    .notification-main.notification-center .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-center .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-center .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-center #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-center #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-center dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right {
+    bottom: 20px;
+    flex-direction: column;
+    right: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-right {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-slide {
+      animation-name: slideRight;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-right dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-left {
+    bottom: 20px;
+    flex-direction: column;
+    left: 20px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.notification-bottom-left {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: calc(100% - 40px) !important; } }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-pop {
+      animation-name: popBottom;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-slide {
+      animation-name: slideLeft;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left.enzuzo-animate.enzuzo-fade-in {
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
+      animation-delay: normal;
+      animation-iteration-count: 1; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar {
+      bottom: 26px; }
+    .notification-main.notification-bottom-left dfn.enzuzo-gpc-tooltip-bar > .dfn-enzuzo-tooltip-bar:before {
+      bottom: -6px;
+      transform: rotate(180deg); }
+  .notification-main.notification-bottom-right, .notification-main.notification-bottom-left {
+    /* Buttons */ }
+    .notification-main.notification-bottom-right .cookieButtonWrap, .notification-main.notification-bottom-left .cookieButtonWrap {
+      flex-direction: column;
+      width: 100%; }
+    .notification-main.notification-bottom-right .button-default, .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-right .button-rounded, .notification-main.notification-bottom-left .button-default, .notification-main.notification-bottom-left .button-border, .notification-main.notification-bottom-left .button-rounded {
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100% !important; }
+      .notification-main.notification-bottom-right .button-default:last-of-type, .notification-main.notification-bottom-right .button-border:last-of-type, .notification-main.notification-bottom-right .button-rounded:last-of-type, .notification-main.notification-bottom-left .button-default:last-of-type, .notification-main.notification-bottom-left .button-border:last-of-type, .notification-main.notification-bottom-left .button-rounded:last-of-type {
+        margin-bottom: 0; }
+    .notification-main.notification-bottom-right .button-border, .notification-main.notification-bottom-left .button-border {
+      background: none; }
+    .notification-main.notification-bottom-right .button-edgeless, .notification-main.notification-bottom-left .button-edgeless {
+      width: 100% !important; }
+    .notification-main.notification-bottom-right .close-banner-button, .notification-main.notification-bottom-left .close-banner-button {
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
+    .notification-main.notification-bottom-right .cookie-icon, .notification-main.notification-bottom-left .cookie-icon {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      margin: 0; }
+    .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+      text-align: center;
+      width: 100%; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.notification-bottom-right #notificationManagerLink, .notification-main.notification-bottom-left #notificationManagerLink {
+          text-align: center;
+          width: 100%;
+          padding: 8px 0; } }
+  .notification-main.notification-bottom-right .notification-desc, .notification-main.notification-bottom-left .notification-desc, .notification-main.notification-center .notification-desc {
+    flex-direction: column;
+    align-items: flex-start; }
+    .notification-main.notification-bottom-right .notification-desc a, .notification-main.notification-bottom-left .notification-desc a, .notification-main.notification-center .notification-desc a {
+      margin: 0; }
+    .notification-main.notification-bottom-right .notification-desc.hasGPC, .notification-main.notification-bottom-left .notification-desc.hasGPC, .notification-main.notification-center .notification-desc.hasGPC {
+      flex-direction: column; }
+      .notification-main.notification-bottom-right .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-bottom-left .notification-desc.hasGPC .enzuzo-gpc-status, .notification-main.notification-center .notification-desc.hasGPC .enzuzo-gpc-status {
+        margin-top: 8px; }
+  .notification-main.notification-bottom-right .notification-buttons, .notification-main.notification-bottom-left .notification-buttons, .notification-main.notification-center .notification-buttons {
+    flex-wrap: wrap; }
+  .notification-main.default-small, .notification-main.default-top-small {
+    padding: 4px 8px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-small #notificationManagerLink, .notification-main.default-top-small #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-medium, .notification-main.default-top-medium {
+    padding: 8px 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-medium #notificationManagerLink, .notification-main.default-top-medium #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-large, .notification-main.default-top-large {
+    padding: 16px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-large #notificationManagerLink, .notification-main.default-top-large #notificationManagerLink {
+        padding: 8px 0; } }
+  .notification-main.default-small .notification-desc, .notification-main.default-medium .notification-desc, .notification-main.default-large .notification-desc, .notification-main.default-top-small .notification-desc, .notification-main.default-top-medium .notification-desc, .notification-main.default-top-large .notification-desc {
+    margin-bottom: 0px; }
+  .notification-main.bottom-center-small, .notification-main.top-center-small {
+    padding: 4px 8px; }
+  .notification-main.bottom-center-medium, .notification-main.top-center-medium {
+    padding: 8px 16px; }
+  .notification-main.bottom-center-large, .notification-main.top-center-large {
+    padding: 16px; }
+  .notification-main.bottom-center-floating-small, .notification-main.top-center-floating-small {
+    padding: 8px; }
+  .notification-main.bottom-center-floating-medium, .notification-main.top-center-floating-medium {
+    padding: 12px 16px; }
+  .notification-main.bottom-center-floating-large, .notification-main.top-center-floating-large {
+    padding: 18px 16px; }
+  .notification-main.center-small {
+    width: 360px;
+    padding: 16px; }
+  .notification-main.center-medium {
+    width: 400px;
+    padding: 24px; }
+  .notification-main.center-large {
+    width: 450px;
+    padding: 32px; }
+  .notification-main.bottom-left-small, .notification-main.bottom-right-small {
+    width: 250px;
+    padding: 8px; }
+    .notification-main.bottom-left-small.hasCookieIcon .cookie-icon, .notification-main.bottom-right-small.hasCookieIcon .cookie-icon {
+      top: 8px;
+      left: 5px; }
+    .notification-main.bottom-left-small.hasCookieIcon .notification-text, .notification-main.bottom-right-small.hasCookieIcon .notification-text {
+      padding-left: 24px; }
+    .notification-main.bottom-left-small.hasCloseIcon .close-banner-button, .notification-main.bottom-right-small.hasCloseIcon .close-banner-button {
+      right: 4px;
+      top: 4px; }
+    .notification-main.bottom-left-small.hasCloseIcon .notification-text, .notification-main.bottom-right-small.hasCloseIcon .notification-text {
+      padding-right: 24px; }
+  .notification-main.bottom-left-medium, .notification-main.bottom-right-medium {
+    width: 270px;
+    padding: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .cookie-icon, .notification-main.bottom-right-medium.hasCookieIcon .cookie-icon {
+      top: 18px;
+      left: 16px; }
+    .notification-main.bottom-left-medium.hasCookieIcon .notification-text, .notification-main.bottom-right-medium.hasCookieIcon .notification-text {
+      padding-left: 28px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .close-banner-button, .notification-main.bottom-right-medium.hasCloseIcon .close-banner-button {
+      right: 12px;
+      top: 12px; }
+    .notification-main.bottom-left-medium.hasCloseIcon .notification-text, .notification-main.bottom-right-medium.hasCloseIcon .notification-text {
+      padding-right: 28px; }
+  .notification-main.bottom-left-large, .notification-main.bottom-right-large {
+    width: 300px;
+    padding: 24px; }
+    .notification-main.bottom-left-large.hasCookieIcon .cookie-icon, .notification-main.bottom-right-large.hasCookieIcon .cookie-icon {
+      top: 26px;
+      left: 16px; }
+    .notification-main.bottom-left-large.hasCookieIcon .notification-text, .notification-main.bottom-right-large.hasCookieIcon .notification-text {
+      padding-left: 20px; }
+    .notification-main.bottom-left-large.hasCloseIcon .close-banner-button, .notification-main.bottom-right-large.hasCloseIcon .close-banner-button {
+      right: 14px;
+      top: 22px; }
+    .notification-main.bottom-left-large.hasCloseIcon .notification-text, .notification-main.bottom-right-large.hasCloseIcon .notification-text {
+      padding-right: 20px; }
+  .notification-main.has-edgeless {
+    padding: 0;
+    align-items: stretch; }
+    .notification-main.has-edgeless .notification-desc {
+      margin: 0; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .notification-desc {
+          flex-wrap: wrap; } }
+    .notification-main.has-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center; }
+    .notification-main.has-edgeless #cookie-notification__decline {
+      margin-bottom: 8px; }
+    .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+      font-size: 13px;
+      margin: 0 auto; }
+      @media only screen and (max-width: 480px) {
+        .notification-main.has-edgeless .buttons-small #notificationManagerLink, .notification-main.has-edgeless .buttons-medium #notificationManagerLink, .notification-main.has-edgeless .buttons-large #notificationManagerLink {
+          text-align: center; } }
+  .notification-main.default-edgeless .cookie-icon, .notification-main.bottom-center-edgeless .cookie-icon, .notification-main.bottom-center-floating-edgeless .cookie-icon, .notification-main.default-top-edgeless .cookie-icon, .notification-main.top-center-edgeless .cookie-icon, .notification-main.top-center-floating-edgeless .cookie-icon {
+    padding-left: 8px; }
+  .notification-main.default-edgeless .notification-text-small, .notification-main.bottom-center-edgeless .notification-text-small, .notification-main.bottom-center-floating-edgeless .notification-text-small, .notification-main.default-top-edgeless .notification-text-small, .notification-main.top-center-edgeless .notification-text-small, .notification-main.top-center-floating-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 4px 8px; }
+  .notification-main.default-edgeless .notification-text-medium, .notification-main.bottom-center-edgeless .notification-text-medium, .notification-main.bottom-center-floating-edgeless .notification-text-medium, .notification-main.default-top-edgeless .notification-text-medium, .notification-main.top-center-edgeless .notification-text-medium, .notification-main.top-center-floating-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 8px 16px; }
+  .notification-main.default-edgeless .notification-text-large, .notification-main.bottom-center-edgeless .notification-text-large, .notification-main.bottom-center-floating-edgeless .notification-text-large, .notification-main.default-top-edgeless .notification-text-large, .notification-main.top-center-edgeless .notification-text-large, .notification-main.top-center-floating-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 16px; }
+  .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+    padding-right: 40px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .closeTrigger, .notification-main.bottom-center-edgeless .closeTrigger, .notification-main.bottom-center-floating-edgeless .closeTrigger, .notification-main.default-top-edgeless .closeTrigger, .notification-main.top-center-edgeless .closeTrigger, .notification-main.top-center-floating-edgeless .closeTrigger {
+        padding-right: 0; } }
+  @media only screen and (max-width: 800px) {
+    .notification-main.default-edgeless .notification-buttons, .notification-main.bottom-center-edgeless .notification-buttons, .notification-main.bottom-center-floating-edgeless .notification-buttons, .notification-main.default-top-edgeless .notification-buttons, .notification-main.top-center-edgeless .notification-buttons, .notification-main.top-center-floating-edgeless .notification-buttons {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; } }
+  .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+    font-size: 13px;
+    margin: auto 18px !important; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless #notificationManagerLink, .notification-main.bottom-center-edgeless #notificationManagerLink, .notification-main.bottom-center-floating-edgeless #notificationManagerLink, .notification-main.default-top-edgeless #notificationManagerLink, .notification-main.top-center-edgeless #notificationManagerLink, .notification-main.top-center-floating-edgeless #notificationManagerLink {
+        margin: 0 auto !important; } }
+  .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+    margin-right: 0 !important;
+    top: 50%; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.default-edgeless .close-banner-button, .notification-main.bottom-center-edgeless .close-banner-button, .notification-main.bottom-center-floating-edgeless .close-banner-button, .notification-main.default-top-edgeless .close-banner-button, .notification-main.top-center-edgeless .close-banner-button, .notification-main.top-center-floating-edgeless .close-banner-button {
+        margin: 0 auto !important; } }
+  .notification-main.center-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 16px; }
+  .notification-main.center-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 24px; }
+  .notification-main.center-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 32px; }
+  .notification-main.center-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-edgeless .notification-text-small, .notification-main.bottom-right-edgeless .notification-text-small {
+    font-size: 12px;
+    padding: 8px 8px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-medium, .notification-main.bottom-right-edgeless .notification-text-medium {
+    font-size: 13px;
+    padding: 16px 16px 0; }
+  .notification-main.bottom-left-edgeless .notification-text-large, .notification-main.bottom-right-edgeless .notification-text-large {
+    font-size: 14px;
+    padding: 24px 24px 0; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .cookie-icon {
+    top: 10px;
+    left: 10px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-small .notification-desc {
+    padding-left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .cookie-icon {
+    top: 14px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-medium .notification-desc {
+    padding-left: 20px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .cookie-icon, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .cookie-icon {
+    top: 26px;
+    left: 16px; }
+  .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCookieIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCookieIcon.bottom-right-large .notification-desc {
+    padding-left: 26px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .close-banner-button {
+    top: 5px;
+    right: 8px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-small .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-small .notification-desc {
+    padding-right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .close-banner-button {
+    top: 11px;
+    right: 16px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-medium .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-medium .notification-desc {
+    padding-right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .close-banner-button, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .close-banner-button {
+    top: 22px;
+    right: 20px; }
+  .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-left-edgeless.hasCloseIcon.bottom-right-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-left-large .notification-desc, .notification-main.bottom-right-edgeless.hasCloseIcon.bottom-right-large .notification-desc {
+    padding-right: 26px; }
+  .notification-main.bottom-left-edgeless .notification-buttons, .notification-main.bottom-right-edgeless .notification-buttons {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0; }
+  .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+    margin-bottom: 12px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-small .notification-desc, .notification-main.bottom-right-small .notification-desc, .notification-main.center-small .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+    margin-bottom: 14px; }
+    @media only screen and (max-width: 480px) {
+      .notification-main.bottom-left-medium.hasCloseIcon .notification-desc, .notification-main.bottom-right-medium.hasCloseIcon .notification-desc, .notification-main.center-medium.hasCloseIcon .notification-desc, .notification-main.bottom-left-large.hasCloseIcon .notification-desc, .notification-main.bottom-right-large.hasCloseIcon .notification-desc, .notification-main.center-large.hasCloseIcon .notification-desc {
+        margin-bottom: 8px; } }
+  .notification-main .notification-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-family: inherit;
+    justify-content: center;
+    line-height: 1.5em;
+    text-align: left; }
+    .notification-main .notification-text-small {
+      font-size: 12px; }
+    .notification-main .notification-text-medium {
+      font-size: 13px; }
+    .notification-main .notification-text-large {
+      font-size: 14px; }
+    .notification-main .notification-text a {
+      text-decoration: underline;
+      white-space: nowrap; }
+  .notification-main .notification-desc {
+    display: flex;
+    align-items: center; }
+    .notification-main .notification-desc.hasGPC {
+      flex-direction: row; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-desc {
+        flex-direction: column;
+        align-items: flex-start; }
+        .notification-main .notification-desc.hasGPC {
+          flex-direction: column; } }
+  .notification-main .notification-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    @media only screen and (max-width: 800px) {
+      .notification-main .notification-buttons {
+        flex-wrap: wrap; } }
+    .notification-main .notification-buttons .cookieButtonWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media only screen and (max-width: 480px) {
+        .notification-main .notification-buttons .cookieButtonWrap {
+          width: 100%;
+          flex-direction: column; } }
+    .notification-main .notification-buttons .close-banner-button {
+      display: block; }
+      .notification-main .notification-buttons .close-banner-button:before, .notification-main .notification-buttons .close-banner-button:after {
+        content: "";
+        left: 15px;
+        height: 16px;
+        position: absolute;
+        top: 6px;
+        width: 2px; }
+      .notification-main .notification-buttons .close-banner-button:before {
+        transform: rotate(45deg); }
+      .notification-main .notification-buttons .close-banner-button:after {
+        transform: rotate(135deg); }
+      .notification-main .notification-buttons .close-banner-button:hover {
+        cursor: pointer; }
+  .notification-main .notification-button {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+    width: auto !important;
+    transition: all ease 0.3s;
+    white-space: nowrap;
+    font-family: inherit; }
+    @media only screen and (max-width: 480px) {
+      .notification-main .notification-button.button-default, .notification-main .notification-button.button-border, .notification-main .notification-button.button-rounded {
+        margin: 4px 0 !important;
+        width: 100% !important; } }
+  .notification-main .buttons-small button {
+    padding: 4px 12px; }
+  .notification-main .buttons-medium button {
+    padding: 4px 12px; }
+  .notification-main .buttons-large button {
+    padding: 8px 24px; }
+  .notification-main .button-default {
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-border {
+    border: 1px solid;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-rounded {
+    border: none !important;
+    border-radius: 9px;
+    margin: 0 8px;
+    height: auto !important; }
+  .notification-main .button-edgeless {
+    border-radius: 0 !important;
+    border: none !important; }
+  .notification-main #notificationManagerLink {
+    font-size: 13px;
+    margin: 0 18px;
+    padding: 12px 0;
+    white-space: nowrap; }
+    .notification-main #notificationManagerLink:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+  .notification-main.enzuzo-shadow {
+    box-shadow: 0px 0px 24px -5px black; }
+
+.bodyLock {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  overflow: scroll !important; }
+  .bodyLock:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2400;
+    background-color: rgba(0, 0, 0, 0.5); }
