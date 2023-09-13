@@ -5,8 +5,8 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
-  basePath: '/static-app',
-  assetPrefix: '/static-app',
+  //basePath: '/static-app',
+  //assetPrefix: '/static-app',
 };
 
 module.exports = nextConfig;
