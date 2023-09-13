@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+package-lock.json
+assets/.DS_Store
+images/.DS_Store
+scss/.DS_Store
+package-lock.json
