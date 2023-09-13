@@ -19,6 +19,7 @@ import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import { useRouter } from "next/router";
 import { NoEncryption } from "@mui/icons-material";
 import { Image_files } from "../images/images";
+import { Container } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -79,7 +80,9 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box id="top"
+    <>
+  
+ <Box id="top"
       sx={{
         display: "flex",
         "& .MuiPaper-root": {
@@ -87,17 +90,23 @@ function DrawerAppBar(props) {
           
          boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important",
           position: "fixed",
-          padding: { md: "10px 90px 10px 90px", xs: "20px 0px 20px 0px" },
+          padding: { md: "10px 80px 10px 100px", xs: "20px 0px 20px 0px" },
           display: "flex",
           justifyContent: "space-between",
+          alignItems:"center",
+
         },
         "& .MuiToolbar-root": {
           justifyContent: "space-between",
           minHeight: 45,
+          width:{md:"1200px", xs:"550px"},
+         
+         
         },
       }}
     >
       <CssBaseline />
+      <Container  className={Styles.container}>
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -131,6 +140,8 @@ function DrawerAppBar(props) {
          
         </Toolbar>
       </AppBar>
+      </Container>
+     
       <Box component="nav">
         <Drawer
           container={container}
@@ -155,6 +166,11 @@ function DrawerAppBar(props) {
         <Toolbar />
       </Box> */}
     </Box>
+   
+   
+    </>
+  
+
   );
 }
 DrawerAppBar.propTypes = {

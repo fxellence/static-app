@@ -24,13 +24,10 @@ export const Footer = () => {
       });
     }
   };
-  const { acceptAllCookies, declineAllCookies, acceptCookies } =
-  useCookieConsentContext();
-  console.log(acceptAllCookies ,'useCookieConsentContext______',  declineAllCookies, acceptCookies);
-
+ 
   return (
     <>
-      <Container className={Styles.fotterpadding}>
+      <Container  className={Styles.container} sx={{background:"white"}}>
         <div className={Styles.footer}>
           <Grid container alignItems={"start"}>
             <Grid item xs={12} md={8}>

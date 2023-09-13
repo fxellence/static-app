@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./home.module.css";
-import { Box, Grid, TextField, Typography } from "@mui/material";
+import { Box, Container, Grid, TextField, Typography } from "@mui/material";
 import { Style } from "@mui/icons-material";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { Checkarrow } from "../Components/icon";
@@ -88,6 +88,7 @@ fetch("https://forms.nicepagesrv.com/v2/form/process", requestOptions)
         >
           Contact
         </Typography>
+        <Container className={Styles.container}>
         <Grid container className={Styles.contactpadding}>
           <Grid item xs={12} md={6}>
             <div className={Styles.contact1}>
@@ -226,6 +227,7 @@ fetch("https://forms.nicepagesrv.com/v2/form/process", requestOptions)
                     <Input_error text={formik.errors.message} />
                   )}
                 </Box>
+                
                 <button className={Styles.sentbutton} type="submit">
                   <Typography className={Styles.sentbuttontext}>
                     Send to FXellence
@@ -246,6 +248,8 @@ fetch("https://forms.nicepagesrv.com/v2/form/process", requestOptions)
             </form>
           </Grid>
         </Grid>
+        </Container>
+       
       </div>
     </>
   );

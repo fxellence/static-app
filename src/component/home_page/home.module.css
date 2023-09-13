@@ -17,7 +17,7 @@
     padding: 0px 110px;
 }
 .bannerpadding{
-    padding: 125px 110px 20px 110px;
+    padding: 125px 10px 20px 10px;
 }
 .footertext{
     font-family: 'Poppins', sans-serif;
@@ -92,6 +92,9 @@ color: #9926f0 !important;
     background: linear-gradient( to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95) );
     
 }
+.container{
+    width: 1200px;
+}
 .bannertitle{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -111,6 +114,7 @@ color: #9926f0 !important;
     cursor: pointer;
     min-width: 100px;
     height: 50px;
+    width: 220px;
     position: relative;
     padding: 0.8375rem 4.375rem 0.8375rem 1.25rem;
     font-weight: 700;
@@ -177,7 +181,7 @@ color: #9926f0 !important;
     
 }
 .contactpadding{
-    padding: 0px 110px 50px 110px;
+    padding: 0px 10px 50px 10px;
   
 }
 .contact1{
@@ -302,7 +306,7 @@ color: #9926f0 !important;
     font-weight: 700;
     margin: 0;
     border: 0.1rem solid rgba(255, 255, 255, 0.6);
-    background-color: #9926f0;
+    background-color: #9926f0 !important;
     border-radius: 5px !important;
     margin-top: 15px;
     color: white;
@@ -316,7 +320,7 @@ color: #9926f0 !important;
     font-weight: 700;
     margin: 0;
     border: 0.1rem solid rgba(255, 255, 255, 0.6);
-    background: #8220cc;
+    background: #8220cc !important;
     color: #fff;
     display: inline-block;
     border-radius: 5px !important;
@@ -382,14 +386,24 @@ color: #9926f0 !important;
 }
 
 @media only screen and (max-width: 550px){
-
+    .container{
+      width: 550px;
+    }
     .bannerpadding{
         padding: 110px 20px 10px 20px;
     }
+    .buttonalignment{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .banner{
-        width: 100%;
+        width: 550px;
         background: linear-gradient( to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95) );
         
+    }
+    .contact{
+        width: 550px;
     }
     .bannertitle{
        
@@ -436,6 +450,10 @@ color: #9926f0 !important;
     .contacttext{
        text-align: center;
        font-weight: 400;
+    }
+    .bannermobile{
+        display: flex;
+        flex-direction: column;
     }
     .list{
        

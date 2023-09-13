@@ -1,7 +1,7 @@
 import React from "react";
 import { Curvedesign } from "../Components/icon";
 import Styles from "./home.module.css";
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Image_files } from "../images/images";
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
@@ -20,10 +20,12 @@ export const BannerSection = () => {
 
     return (
         <>
+       
         <div id="top" className={Styles.banner}>
+        <Container className={Styles.container}>
         <div className={Styles.bannerpadding}>
         <Grid container columnGap={"20px"}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className={Styles.buttonalignment}>
         <Typography className={Styles.bannertitle}>
         International Payments Made Easy
         </Typography>
@@ -48,10 +50,13 @@ export const BannerSection = () => {
 
         </Grid>
         </div>
+       
+        </Container>
         <Curvedesign />
        
-        
         </div>
+       
+       
         
         </>
     );
